@@ -1,2 +1,9 @@
 # Hippo
-a crx for hippo , wblnb
+a crx for hippo , WBLnb
+
+1.开播时自动提醒；
+
+2.自动检测牌子，设置切换到WBL的牌子；
+
+3.自动领取荧光棒，自动提醒续牌子，自动续牌（需手动开启）；
+
