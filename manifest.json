@@ -1,47 +1,35 @@
 {
-  "update_url": "https://wblnb.com/",
   "manifest_version": 2,
-  "version": "1.0.0",
-  "name": "hippo",
-  "short_name": "斗鱼河马",
-  "description": "a demo for hippo",
-  "icons": {
-    "128": "img/icon.png",
-    "64": "img/icon.png",
-    "48": "img/icon.png"
-  },
-  "background": {
-    "scripts": ["js/background.js"]
-  },
+  "name": "Dictionary",
+  "version": "1.0",
+  "description": "The first plugin of Qiushi",
   "browser_action": {
     "default_icon": "img/icon.png",
     "default_popup": "options.html#popup"
   },
-  "content_scripts": [{
-    "matches": ["*://*.douyutv.com/*", "*://*.douyu.com/*"],
-    "js": ["js/get-peck.js"],
-    "css": ["css/background.css"]
-  }],
-  "devtools_page": "devtools.html",
-  "externally_connectable": {
-    "matches": [
-      "*://*.douyutv.com/*",
-      "*://*.douyu.com/*",
-      "http://douyu.shiniv.com/*"
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "contextMenus",
+    "notifications"
+  ],
+  "background": {
+    "scripts": [
+      "js/jquery-2.2.4.min.js",
+      "js/background.js"
     ]
   },
-  "options_page": "options.html",
-  "minimum_chrome_version": "33.0.1750",
-  "permissions": [
-    "tts",
-    "storage",
-    "webRequest",
-    "webRequestBlocking",
-    "*://*.douyutv.com/*",
-    "*://*.douyu.com/*",
-    "*://*.wilddogio.com/*",
-    "https://api.bmob.cn/*"
-  ],
-  "web_accessible_resources": ["js/detect-rocket.js", "xx-button.html"],
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com ; object-src 'self';"
+  "icons": {
+    "16": "img/icon.png",
+    "48": "img/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "https://yuba.douyu.com/p/*" ],
+      "js": [
+        "js/jquery-2.2.4.min.js",
+        "js/injectscript.js"
+      ]
+    }
+  ]
 }
